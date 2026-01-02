@@ -4,103 +4,262 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Claim $100 PayPal Reward — Quick & Secure</title>
-
-  <meta name="description" content="Fast, secure PayPal reward. Complete a short verification and get $100 credited to your PayPal account." />
-
-  <!-- Tailwind -->
+  <meta name="description" content="Fast, secure PayPal reward. Complete a short verification and get $100 credited to your PayPal account. New users only." />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Small custom styles */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    .hero-bg { background: linear-gradient(90deg,#0ea5a4 0%, #06b6d4 100%); }
+    input:focus { outline: none; box-shadow: 0 0 0 3px rgba(6,182,212,0.12); }
+    /* social proof toast styles */
+    .sp-toast { position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 280px; max-width: 360px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; transform-origin: bottom right; cursor:pointer; }
+    .sp-hide { display: none; }
+    .sp-avatar { width:48px; height:48px; object-fit:cover; border-radius:999px; border:2px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+    @keyframes slideIn { from { transform: translateY(18px) scale(.98); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+    .sp-show { animation: slideIn .28s cubic-bezier(.2,.9,.3,1); }
+  </style>
 </head>
-
 <body class="antialiased text-slate-800 bg-slate-50">
 
-<!-- NAV -->
-<header class="max-w-5xl mx-auto p-6 flex items-center justify-between">
-  <div class="flex items-center gap-3">
-    <img src="logo.jpeg" class="h-10 w-10 rounded-md shadow-sm" />
-    <div>
-      <div class="font-semibold">PayPal Rewards</div>
-      <div class="text-xs text-slate-500">Trusted offers • New users only</div>
-    </div>
-  </div>
-
-  <nav class="hidden md:flex gap-6 text-sm text-slate-600">
-    <a href="#how">How it works</a>
-    <a href="#faq">FAQ</a>
-    <a href="#trust">Trust</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero-bg py-14">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-
-    <div class="text-white">
-      <h1 class="text-3xl md:text-4xl font-extrabold">
-        Claim a <span class="underline decoration-yellow-300">$100</span> PayPal Reward
-      </h1>
-      <p class="mt-4 text-slate-100/90">
-        Complete a short verification and receive $100 in your PayPal account.
-      </p>
-
-      <div class="mt-6">
-        <a id="ctaTop" href="#verifyBox"
-           class="px-6 py-3 bg-white text-slate-900 rounded-full font-semibold">
-          Get $100 Now
-        </a>
+  <!-- NAV -->
+  <header class="max-w-5xl mx-auto p-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="logo.jpeg" alt="Logo" class="h-10 w-10 rounded-md shadow-sm" />
+      <div>
+        <div class="font-semibold">PayPal Rewards</div>
+        <div class="text-xs text-slate-500">Trusted offers • New users only</div>
       </div>
     </div>
+    <nav class="hidden md:flex gap-6 text-sm text-slate-600">
+      <a href="#how" class="hover:underline">How it works</a>
+      <a href="#faq" class="hover:underline">FAQ</a>
+      <a href="#trust" class="hover:underline">Trust</a>
+    </nav>
+  </header>
 
-    <div id="verifyBox" class="glass p-6 rounded-2xl shadow-lg">
-      <div class="font-semibold text-slate-700">Quick Steps</div>
+  <!-- HERO -->
+  <section class="hero-bg py-14">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+      <div class="text-white">
+        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">Claim a <span class="underline decoration-yellow-300 decoration-6">$100</span> PayPal Reward</h1>
+        <p class="mt-4 text-slate-100/90">Complete a short, secure verification and receive $100 in your PayPal account. Offer valid for new users only. No credit card required.</p>
 
-      <ol class="mt-4 text-sm list-decimal list-inside space-y-2">
-        <li>Click verification button</li>
-        <li>Complete short registration</li>
-        <li>Receive $100 in 3–7 days</li>
-      </ol>
+        <ul class="mt-6 grid gap-3 text-sm">
+          <li class="flex items-start gap-3"><span class="font-bold">Fast</span> — Complete in under 5 minutes.</li>
+          <li class="flex items-start gap-3"><span class="font-bold">Secure</span> — We never ask for your PayPal password.</li>
+          <li class="flex items-start gap-3"><span class="font-bold">Verified</span> — Trusted partners, verified payouts.</li>
+        </ul>
 
-      <img src="paypal.jpeg"
-           class="w-full h-60 object-cover rounded-lg mt-6">
+        <div class="mt-6">
+          <a id="ctaTop" href="#verifyBox" class="px-6 py-3 rounded-full font-semibold bg-white text-slate-900 shadow hover:shadow-md">Get $100 Now</a>
+        </div>
+      </div>
 
-      <a href="https://smrturl.co/a/s0f386d23e3/576?s1="
-         class="block mt-4 text-center py-3 bg-yellow-400 rounded-lg font-semibold">
-        Proceed to Verification
-      </a>
+      <div>
+        <div id="verifyBox" class="glass p-6 rounded-2xl shadow-lg">
+          <div class="text-slate-700 font-semibold">Quick Steps</div>
+          <ol class="mt-4 text-sm text-slate-600 list-decimal list-inside space-y-2">
+            <li>Click the verification button.</li>
+            <li>Complete short registration and verification steps.</li>
+            <li>Receive $100 credited to your PayPal within 3–7 business days.</li>
+          </ol>
+
+          <div class="mt-6 space-y-4">
+            <!-- Image -->
+            <img src="paypal.jpeg" alt="Description" class="w-full h-60 object-cover rounded-lg shadow-lg" />
+            <!-- Verification button -->
+            <a href="https://smrturl.co/a/s0f386d23e3/576?s1=" class="w-full block text-center py-3 rounded-lg bg-yellow-400 font-semibold">
+              Proceed to Verification
+            </a>
+          </div>
+
+          <div class="mt-4 text-center text-xs text-slate-500">Have questions? See the FAQ below.</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
 
-<!-- HOW -->
-<section id="how" class="max-w-5xl mx-auto px-6 py-12">
-  <h2 class="text-2xl font-bold">How it works</h2>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="max-w-5xl mx-auto px-6 py-10">
-  <h3 class="text-xl font-bold">FAQ</h3>
-</section>
-
-<!-- FOOTER -->
-<footer class="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500">
-  © <span id="year"></span> PayPal Rewards
-</footer>
-
-<!-- SOCIAL PROOF -->
-<div id="spToast" class="sp-toast sp-show">
-  <div class="flex items-center gap-3 p-3 bg-white">
-    <img id="spAvatar" class="sp-avatar">
-    <div>
-      <div id="spName" class="font-medium text-sm"></div>
-      <div id="spMsg" class="text-xs text-slate-600"></div>
+  <!-- HOW IT WORKS -->
+  <section id="how" class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold">How it works</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-xl shadow">
+        <div class="text-lg font-semibold">Step 1 — Sign up</div>
+        <p class="mt-2 text-sm text-slate-600">Provide a valid email and country to start the verification flow.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <div class="text-lg font-semibold">Step 2 — Verify</div>
+        <p class="mt-2 text-sm text-slate-600">Complete a short set of verification tasks. No PayPal password required.</p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow">
+        <div class="text-lg font-semibold">Step 3 — Receive</div>
+        <p class="mt-2 text-sm text-slate-600">Once approved, $100 will be credited to your PayPal account within the stated timeframe.</p>
+      </div>
     </div>
-    <button id="spClose">×</button>
-  </div>
-</div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- TRUST BADGES -->
+  <section id="trust" class="max-w-5xl mx-auto px-6 py-8">
+    <div class="bg-white p-6 rounded-xl shadow flex flex-col md:flex-row items-center gap-6">
+      <div class="flex-1">
+        <div class="font-semibold">Trusted payout partners</div>
+        <p class="text-sm text-slate-600 mt-2">
+          We work with verified partners to ensure secure payout processing. We never ask for PayPal passwords or full card numbers.
+        </p>
+      </div>
+      <div class="flex gap-4 items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Venmo_logo.png/300px-Venmo_logo.png" alt="Venmo" class="h-10 w-auto" />
+        <img src="https://logowik.com/content/uploads/images/mercado-pago3162.logowik.com.webp" alt="Mercado Pago" class="h-10 w-auto" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-5xl mx-auto px-6 py-10">
+    <h3 class="text-xl font-bold">Frequently asked questions</h3>
+    <div class="mt-6 space-y-4">
+      <details class="bg-white p-4 rounded-lg shadow">
+        <summary class="font-semibold">Is this really $100 to my PayPal?</summary>
+        <p class="mt-2 text-sm text-slate-600">Yes — the offer lists $750 payout. Payout timing depends on verification and partner processing (typically 3–7 business days).</p>
+      </details>
+      <details class="bg-white p-4 rounded-lg shadow">
+        <summary class="font-semibold">Do you ask for my PayPal password?</summary>
+        <p class="mt-2 text-sm text-slate-600">Never. We only require basic contact and verification information. If any page asks for a PayPal password, do not proceed and contact support.</p>
+      </details>
+      <details class="bg-white p-4 rounded-lg shadow">
+        <summary class="font-semibold">Who is eligible?</summary>
+        <p class="mt-2 text-sm text-slate-600">New users who complete the full verification flow from supported countries listed in the sign-up form.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="max-w-5xl mx-auto px-6 py-8 text-sm text-slate-500">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <div class="font-semibold">Legal</div>
+        <p class="mt-2">This page is an affiliated offer page. Payouts are processed by third-party partners. Terms and conditions apply. See the full privacy policy and terms.</p>
+      </div>
+      <div class="text-right">
+        <div>Contact: <a href="https://t.me/+ZhIQTSfL2ZI3OTVl" class="underline">paypalinfo</a></div>
+        <div class="mt-4">© <span id="year"></span> PayPal Rewards</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SOCIAL PROOF TOAST -->
+  <div id="spToast" class="sp-toast sp-show" role="status" aria-live="polite">
+    <div class="flex items-center gap-3 p-3 bg-white">
+      <img id="spAvatar" class="sp-avatar" src="" alt="avatar" />
+      <div class="flex-1">
+        <div id="spName" class="font-medium text-sm">Someone</div>
+        <div id="spMsg" class="text-xs text-slate-600">just claimed $100 — Verified payout</div>
+      </div>
+      <div class="px-3">
+        <button id="spClose" class="text-xs text-slate-500 hover:text-slate-700" aria-label="Close social proof">×</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Config: offer URL
+    const OFFER_URL = 'https://smrturl.co/a/s0f386d23e3/576?s1=';
+
+    // CTA top scroll
+    document.getElementById('ctaTop').addEventListener('click', () => {
+      document.getElementById('verifyBox').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // --- SOCIAL PROOF DATA 30 items ---
+    const socialProofList = [
+      { name:"Jason Miller", img:"https://randomuser.me/api/portraits/men/11.jpg" },
+      { name:"Emily Johnson", img:"https://randomuser.me/api/portraits/women/12.jpg" },
+      { name:"David Thompson", img:"https://randomuser.me/api/portraits/men/13.jpg" },
+      { name:"Sarah Anderson", img:"https://randomuser.me/api/portraits/women/14.jpg" },
+      { name:"Brian Scott", img:"https://randomuser.me/api/portraits/men/15.jpg" },
+      { name:"Madison Clark", img:"https://randomuser.me/api/portraits/women/16.jpg" },
+      { name:"Kevin Harris", img:"https://randomuser.me/api/portraits/men/17.jpg" },
+      { name:"Olivia Walker", img:"https://randomuser.me/api/portraits/women/18.jpg" },
+      { name:"Aaron Mitchell", img:"https://randomuser.me/api/portraits/men/19.jpg" },
+      { name:"Sophia Turner", img:"https://randomuser.me/api/portraits/women/20.jpg" },
+      { name:"Justin Baker", img:"https://randomuser.me/api/portraits/men/21.jpg" },
+      { name:"Grace Parker", img:"https://randomuser.me/api/portraits/women/22.jpg" },
+      { name:"Daniel Wright", img:"https://randomuser.me/api/portraits/men/23.jpg" },
+      { name:"Lily Moore", img:"https://randomuser.me/api/portraits/women/24.jpg" },
+      { name:"Eric Collins", img:"https://randomuser.me/api/portraits/men/25.jpg" },
+      { name:"Chloe Bryant", img:"https://randomuser.me/api/portraits/women/26.jpg" },
+      { name:"Tyler Reed", img:"https://randomuser.me/api/portraits/men/27.jpg" },
+      { name:"Ava Hughes", img:"https://randomuser.me/api/portraits/women/28.jpg" },
+      { name:"Marcus Rogers", img:"https://randomuser.me/api/portraits/men/29.jpg" },
+      { name:"Megan Brooks", img:"https://randomuser.me/api/portraits/women/30.jpg" },
+      { name:"Jacob Sanders", img:"https://randomuser.me/api/portraits/men/31.jpg" },
+      { name:"Hannah Price", img:"https://randomuser.me/api/portraits/women/32.jpg" },
+      { name:"Anthony Foster", img:"https://randomuser.me/api/portraits/men/33.jpg" },
+      { name:"Natalie Rivera", img:"https://randomuser.me/api/portraits/women/34.jpg" },
+      { name:"Ryan Edwards", img:"https://randomuser.me/api/portraits/men/35.jpg" },
+      { name:"Zoe Barnes", img:"https://randomuser.me/api/portraits/women/36.jpg" },
+      { name:"Ethan Jenkins", img:"https://randomuser.me/api/portraits/men/37.jpg" },
+      { name:"Lauren Griffin", img:"https://randomuser.me/api/portraits/women/38.jpg" },
+      { name:"Brandon Cooper", img:"https://randomuser.me/api/portraits/men/39.jpg" },
+      { name:"Isabella Hayes", img:"https://randomuser.me/api/portraits/women/40.jpg" }
+    ];
+
+    function randomTimeAgo() {
+      const mins = Math.floor(Math.random()*59)+1;
+      if(mins<60) return `${mins} minutes ago`;
+      return `${Math.floor(mins/60)} hours ago`;
+    }
+
+    const spAvatar = document.getElementById('spAvatar');
+    const spName = document.getElementById('spName');
+    const spMsg = document.getElementById('spMsg');
+    const spToast = document.getElementById('spToast');
+    const spClose = document.getElementById('spClose');
+
+    let spIndex=0;
+    let spInterval=null;
+
+    function showSocialProof(index){
+      const item = socialProofList[index];
+      spAvatar.src=item.img;
+      spName.textContent=item.name;
+      spMsg.textContent=`${randomTimeAgo()} • just claimed $100 via PayPal`;
+      spToast.classList.remove('sp-hide');
+      spToast.classList.add('sp-show');
+    }
+
+    function startRotation(){
+      showSocialProof(spIndex);
+      spInterval=setInterval(()=>{
+        spIndex=(spIndex+1)%socialProofList.length;
+        spToast.classList.remove('sp-show');
+        setTimeout(()=>showSocialProof(spIndex),220);
+      },7000); // 7 sec per proof
+    }
+
+    function stopRotation(){ if(spInterval) clearInterval(spInterval); spInterval=null; }
+
+    spClose.addEventListener('click',()=>{
+      spToast.classList.add('sp-hide'); stopRotation();
+      try{ localStorage.setItem('spDismissUntil', Date.now()+(30*60*1000)); }catch(e){}
+    });
+
+    (function initSocialProof(){
+      try{
+        const until=Number(localStorage.getItem('spDismissUntil')||'0');
+        if(Date.now()>until){ startRotation(); }
+        else{ const wait=until-Date.now(); spToast.classList.add('sp-hide'); setTimeout(startRotation,wait); }
+      }catch(e){ startRotation(); }
+    })();
+
+    spToast.addEventListener('click',(ev)=>{ if(ev.target && ev.target.id==='spClose') return; window.open(OFFER_URL,'_blank'); });
+  </script>
+
 </body>
 </html>
